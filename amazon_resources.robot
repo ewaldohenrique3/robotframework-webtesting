@@ -32,3 +32,6 @@ Verificar se a frase "${FRASE}" é exibida
 
 Verificar se o título da página exibe "${TITULO}"
     Title Should Be    title=${TITULO}
+
+Verificar se aparece a categoria "${NOME_CATEGORIA}"
+    Element Should Be Visible    locator=//span[@class='a-size-base-plus'][contains(.,'${NOME_CATEGORIA}')]
