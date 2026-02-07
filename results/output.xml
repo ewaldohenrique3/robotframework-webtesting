@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.9 on win32)" generated="2026-02-07T03:07:30.764899" rpa="false" schemaversion="5">
+<suite id="s1" name="WebTesting" source="D:\projetos_de_software\.robotframework\robotFrameworkBásico\WebTesting">
+<suite id="s1-s1" name="Amazon Testes" source="D:\projetos_de_software\.robotframework\robotFrameworkBásico\WebTesting\amazon_testes.robot">
+<test id="s1-s1-t1" name="Caso de Teste 01 - Acesso ao menu Eletrônicos" line="9">
+<kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-07T03:07:30.904804" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-07T03:07:30.904621" elapsed="0.550407"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-07T03:07:31.455193" elapsed="0.026766"/>
+</kw>
+<status status="PASS" start="2026-02-07T03:07:30.904137" elapsed="0.577972"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br" owner="amazon_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-02-07T03:07:31.482778" level="INFO">Opening url 'http://www.amazon.com.br'</msg>
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-02-07T03:07:31.482634" elapsed="0.505690"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${MENU_ELETRONICOS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-07T03:07:31.988579" elapsed="1.134972"/>
+</kw>
+<status status="PASS" start="2026-02-07T03:07:31.482361" elapsed="1.641323"/>
+</kw>
+<kw name="Verificar se o título da página exibe &quot;Amazon.com.br | Tudo pra você, de A a Z1111111.&quot;" owner="amazon_resources" source_name="Verificar se o título da página exibe &quot;${TITULO}&quot;">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-07T03:07:33.282584" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-07T03:07:33.282827" level="FAIL">Title should have been 'Amazon.com.br | Tudo pra você, de A a Z1111111.' but was 'Amazon.com.br | Tudo pra você, de A a Z.'.</msg>
+<arg>title=${TITULO}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="FAIL" start="2026-02-07T03:07:33.124351" elapsed="0.174605">Title should have been 'Amazon.com.br | Tudo pra você, de A a Z1111111.' but was 'Amazon.com.br | Tudo pra você, de A a Z.'.</status>
+</kw>
+<status status="FAIL" start="2026-02-07T03:07:33.124015" elapsed="0.175105">Title should have been 'Amazon.com.br | Tudo pra você, de A a Z1111111.' but was 'Amazon.com.br | Tudo pra você, de A a Z.'.</status>
+</kw>
+<kw name="Entrar no menu Eletrônicos" owner="amazon_resources">
+<status status="NOT RUN" start="2026-02-07T03:07:33.299422" elapsed="0.000111"/>
+</kw>
+<kw name="Verificar se a frase &quot;Eletrônicos e Tecnologia&quot; é exibida" owner="amazon_resources" source_name="Verificar se a frase &quot;${FRASE}&quot; é exibida">
+<status status="NOT RUN" start="2026-02-07T03:07:33.299714" elapsed="0.000096"/>
+</kw>
+<kw name="Verificar se o título da página exibe &quot;Eletrônicos e Tecnologia | Amazon.com.br&quot;" owner="amazon_resources" source_name="Verificar se o título da página exibe &quot;${TITULO}&quot;">
+<status status="NOT RUN" start="2026-02-07T03:07:33.300002" elapsed="0.000113"/>
+</kw>
+<doc>Esse teste verifica o menu Eletrônicos do site da Amazon.com.br
+e verifica a categoria Computadores e Informática</doc>
+<tag>categorias</tag>
+<tag>menus</tag>
+<status status="FAIL" start="2026-02-07T03:07:30.902360" elapsed="2.397934">Title should have been 'Amazon.com.br | Tudo pra você, de A a Z1111111.' but was 'Amazon.com.br | Tudo pra você, de A a Z.'.</status>
+</test>
+<doc>Essa suite testa o site da Amazon.com.br</doc>
+<status status="FAIL" start="2026-02-07T03:07:30.801316" elapsed="2.503386"/>
+</suite>
+<status status="FAIL" start="2026-02-07T03:07:30.767573" elapsed="2.539120"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">categorias</stat>
+<stat pass="0" fail="1" skip="0">menus</stat>
+</tag>
+<suite>
+<stat name="WebTesting" id="s1" pass="0" fail="1" skip="0">WebTesting</stat>
+<stat name="Amazon Testes" id="s1-s1" pass="0" fail="1" skip="0">WebTesting.Amazon Testes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
