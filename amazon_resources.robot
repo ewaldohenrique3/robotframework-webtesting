@@ -58,3 +58,12 @@ Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
     Wait Until Element Is Visible    locator=//span[@aria-hidden='true'][contains(.,'Carrinho')]
     Click Element    locator=//span[@aria-hidden='true'][contains(.,'Carrinho')]
     Page Should Contain Element    locator=//span[@class='a-truncate-cut'][contains(.,'Console Xbox Series S')]
+
+Remover o produto "Console Xbox Series S" do carrinho
+    Wait Until Element Is Visible    locator=//span[@class='a-icon a-icon-small-trash']
+    Click Element    locator=//span[@class='a-icon a-icon-small-trash']
+    
+Verificar se o carrinho fica vazio
+    Page Should Contain    foi removido de Carrinho de compras.
+    Page Should Contain    0 produtos
+
