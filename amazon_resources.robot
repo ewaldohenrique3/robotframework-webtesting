@@ -47,3 +47,14 @@ Clicar no botão de pesquisa
 Verificar o resultado da pesquisa, se está listando o produto "${PRODUTO}"
     Wait Until Element Is Visible    locator=//img[@alt='${PRODUTO}']
     Click Element    locator=//img[@alt='${PRODUTO}']  
+
+Adicionar o produto "Console Xbox Series S" no carrinho
+    Wait Until Element Is Visible    locator=//input[@name='submit.add-to-cart']
+    Click Element    locator=//input[@name='submit.add-to-cart']
+    Wait Until Element Is Visible    locator=//input[contains(@aria-labelledby,'attachSiNoCoverage-announce')]
+    Click Element    locator=//input[contains(@aria-labelledby,'attachSiNoCoverage-announce')]
+
+Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
+    Wait Until Element Is Visible    locator=//span[@aria-hidden='true'][contains(.,'Carrinho')]
+    Click Element    locator=//span[@aria-hidden='true'][contains(.,'Carrinho')]
+    Page Should Contain Element    locator=//span[@class='a-truncate-cut'][contains(.,'Console Xbox Series S')]
