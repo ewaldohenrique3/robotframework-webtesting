@@ -2,20 +2,22 @@
 Library    SeleniumLibrary
 
 *** Variables ***
+${BROWSER}        chrome
 ${URL}            http://www.amazon.com.br
 ${MENU_ELETRONICOS}    //a[@href='/Eletronicos-e-Tecnologia/b/?ie=UTF8&node=16209062011&ref_=nav_cs_electronics'][contains(.,'Eletrônicos')]
 ${HEADER_ELETRONICOS}    (//span[contains(.,'Eletrônicos e Tecnologia')])[1]
 ${TEXTO_HEADER_ELETRONICOS}    Eletrônicos e Tecnologia
-
-
+${CAMPO_DE_BUSCA}    //input[contains(@type,'text')]
+${BOTAO_DE_PESQUISA}    //input[contains(@type,'submit')]
 
 
 *** Keywords ***
 Abrir o navegador
-    Open Browser  browser=chrome
+    Open Browser  browser=${BROWSER}
     Maximize Browser Window
  
 Fechar o navegador
+    #Capture Page Screenshot
     Close Browser
     ##options=add_experimental_option("detach", True)
 
@@ -35,3 +37,13 @@ Verificar se o título da página exibe "${TITULO}"
 
 Verificar se aparece a categoria "${NOME_CATEGORIA}"
     Element Should Be Visible    locator=//span[@class='a-size-base-plus'][contains(.,'${NOME_CATEGORIA}')]
+
+Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
+    Input Text    locator=${CAMPO_DE_BUSCA}    text=${PRODUTO}
+
+Clicar no botão de pesquisa
+    Click Element   ${BOTAO_DE_PESQUISA} 
+
+Verificar o resultado da pesquisa, se está listando o produto "${PRODUTO}"
+    Wait Until Element Is Visible    locator=//img[@alt='${PRODUTO}']
+    Click Element    locator=//img[@alt='${PRODUTO}']  
